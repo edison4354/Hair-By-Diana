@@ -1,0 +1,19 @@
+{
+  "name": "hair-by-diana",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/edison4354/Hair-By-Diana.git"
+  },
+  "author": "Edison Li",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/edison4354/Hair-By-Diana/issues"
+  },
+  "homepage": "https://github.com/edison4354/Hair-By-Diana#readme"
+}
