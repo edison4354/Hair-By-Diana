@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/edison4354/Hair-By-Diana/issues"
   },
-  "homepage": "https://github.com/edison4354/Hair-By-Diana#readme"
+  "homepage": "https://github.com/edison4354/Hair-By-Diana#readme",
+  "engines": {
+    "node": "16.11.0"
+  }
 }
