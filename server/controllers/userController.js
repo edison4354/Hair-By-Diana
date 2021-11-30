@@ -5,31 +5,31 @@ import asyncHandler from "express-async-handler";
 //@route       POST /api/users/
 //@access      Public
 
-// const registerUser = asyncHandler(async(req, res) => {
-//     const { name, email, phoneNumber } = req.body;
-//     const userExists = await User.findOne({ email });
+const registerUser = asyncHandler(async(req, res) => {
+    const { name, email, phoneNumber } = req.body;
+    const userExists = await User.findOne({ email });
 
-//     if (userExists) {
-//         res.status(400);
-//         throw new Error("User already exists");
-//     }
-//     const user = await User.create({
-//         name,
-//         email,
-//         phoneNumber,
-//     });
-//     if (user) {
-//         res.status(201).json({
-//             _id: user._id,
-//             name: user.name,
-//             email: user.email,
-//             phoneNumber: user.phoneNumber
-//         });
-//     } else {
-//         res.status(400);
-//         throw new Error("Invalid user data");
-//     }
-// });
+    if (userExists) {
+        res.status(400);
+        throw new Error("User already exists");
+    }
+    const user = await User.create({
+        name,
+        email,
+        phoneNumber,
+    });
+    if (user) {
+        res.status(201).json({
+            _id: user._id,
+            name: user.name,
+            email: user.email,
+            phoneNumber: user.phoneNumber
+        });
+    } else {
+        res.status(400);
+        throw new Error("Invalid user data");
+    }
+});
 
 //@desc        Get an overview of all users
 //@route       GET /api/users/
@@ -63,44 +63,9 @@ const getUserById = asyncHandler(async(req, res) => {
     }
 });
 
-///Barbers
-
-//@desc        Get an overview of all users that are barbers
-//@route       GET /api/users/
-//@access      Public
-
-// const getBarbers = asyncHandler(async(req, res) => {
-//     const barbers = await User.find({ isBarber: true });
-//     res.json(barbers);
-// });
-
-//@desc        Authenticate a user
-//@route       POST /api/users/login
-//@access      Public
-
-// const authUser = asyncHandler(async(req, res) => {
-//     const { email, password } = req.body;
-//     const user = await User.findOne({ email });
-//     console.log(user);
-
-//     if (user && (await user.matchPassword(password))) {
-//         res.status(201).json({
-//             _id: user._id,
-//             name: user.name,
-//             email: user.email,
-//             phoneNumber: user.phoneNumber
-//         });
-//     } else {
-//         res.status(400);
-//         throw new Error("No email or user found or invalid");
-//     }
-// });
-
 export {
     registerUser,
     getUsers,
     getUserById,
     getUserDetails,
-    // getBarbers,
-    // authUser,
 };
