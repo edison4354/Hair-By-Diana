@@ -9,12 +9,12 @@ const createAppointment = asyncHandler(async(req, res) => {
         timeSlot,
         barber,
     });
-    const isBarberCheck = await User.findOne({ _id: barber, isBarber: true });
+    // const isBarberCheck = await User.findOne({ _id: barber, isBarber: true });
 
-    if (!isBarberCheck) {
-        res.status(400);
-        throw new Error("A user without Barber priveleges is selected as barber");
-    }
+    // if (!isBarberCheck) {
+    //     res.status(400);
+    //     throw new Error("A user without Barber priveleges is selected as barber");
+    // }
     if (AppointmentExists) {
         res.status(400);
         throw new Error("Timeslot is already taken with this barber");
@@ -23,7 +23,7 @@ const createAppointment = asyncHandler(async(req, res) => {
         user,
         date,
         timeSlot,
-        barber,
+        stylist,
     });
     if (appointment) {
         res.status(201).json({
@@ -47,7 +47,7 @@ const getAppointments = asyncHandler(async(req, res) => {
 
 const getAppointmentbyId = asyncHandler(async(req, res) => {
     const appointment = await Appointment.findById(req.params.id).populate(
-        "barber",
+        "stylist",
         "name"
     );
     if (appointment) {
