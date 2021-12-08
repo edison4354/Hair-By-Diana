@@ -1,6 +1,6 @@
-import Appointment from "../models/appointmentModel.js";
-import asyncHandler from "express-async-handler";
-import User from "../models/userModel.js";
+const Appointment = require("../models/appointmentModel.js")
+const asyncHandler = require("express-async-handler")
+const user = require("../models/userModel.js")
 
 const createAppointment = asyncHandler(async(req, res) => {
     const { user, date, timeSlot, barber } = req.body;
@@ -9,12 +9,7 @@ const createAppointment = asyncHandler(async(req, res) => {
         timeSlot,
         barber,
     });
-    // const isBarberCheck = await User.findOne({ _id: barber, isBarber: true });
 
-    // if (!isBarberCheck) {
-    //     res.status(400);
-    //     throw new Error("A user without Barber priveleges is selected as barber");
-    // }
     if (AppointmentExists) {
         res.status(400);
         throw new Error("Timeslot is already taken with this barber");
@@ -67,7 +62,7 @@ const test = asyncHandler(async(req, res) => {
     res.send("test");
 });
 
-export {
+module.exports = {
     createAppointment,
     getAppointments,
     getMyAppointments,

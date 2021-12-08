@@ -1,5 +1,5 @@
-import User from "../models/userModel.js";
-import asyncHandler from "express-async-handler";
+const User = require("../models/userModel.js")
+const asyncHandler = require("express-async-handler")
 
 //@desc        Register a new User
 //@route       POST /api/users/
@@ -63,9 +63,9 @@ const getUserById = asyncHandler(async(req, res) => {
     }
 });
 
-export {
+module.exports = {
     registerUser,
     getUsers,
     getUserById,
     getUserDetails,
-};
+};;

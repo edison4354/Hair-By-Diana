@@ -1,10 +1,8 @@
-import express from 'express'
-import dotenv from "dotenv"
-// import appointments from "./sampledata/sampleAppointment.js"
-import connectDB from './config/db.js'
-// import colors from 'colors'
-import userRoutes from "./routes/userRoutes.js"
-import appointmentRoutes from "./routes/appointmentRoutes.js"
+const express = require('express')
+const dotenv = require('dotenv')
+const connectDB = require('./config/db.js')
+const userRoutes = require('././routes/userRoutes.js')
+const appointmentRoutes = require('./routes/appointmentRoutes.js')
 const app = express()
 
 dotenv.config()

@@ -1,16 +1,15 @@
-import express from "express";
+const express = require('express')
 const router = express.Router();
-import {
+const {
     createAppointment,
     getAppointments,
     getMyAppointments,
     getAppointmentbyId,
     test,
-} from "../controllers/appointmentController.js";
-import { protect } from "../middleware/authMiddleware.js";
+} = require("../controllers/appointmentController.js")
 
 router.route("/").post(createAppointment).get(getAppointments);
-router.route("/myappointments").get(protect, getMyAppointments);
+router.route("/myappointments").get(getMyAppointments);
 router.route("/:id").get(getAppointmentbyId);
 
-export default router;
+module.exports = router;
