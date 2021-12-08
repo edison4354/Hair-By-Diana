@@ -4,10 +4,10 @@ import styled from 'styled-components';
 
 export const Nav = styled.nav`
   background: rgba(76, 175, 80, 0);
-  height: 85px;
+  height: 10vh;
   display: flex;
   justify-content: space-between;
-  padding: 0 50px 0 50px;
+  padding: 0 3vw 0 3vw;
   align-items: center;
 `;
 
@@ -18,6 +18,7 @@ export const NavLink = styled(Link)`
   text-decoration: none;
   padding: 0 1rem;
   height: 100%;
+  font-size: 1rem;
   cursor: pointer;
   &.active {
     color: #718561;
@@ -29,10 +30,8 @@ export const Bars = styled(FaBars)`
   color: #808080;
   @media screen and (max-width: 1050px) {
     display: block;
-    position: absolute;
-    top: 12px;
+    top: 0px;
     right: 0;
-    transform: translate(-100%, 75%);
     font-size: 1.8rem;
     cursor: pointer;
 }
@@ -72,4 +71,5 @@ export const NavBtnLink = styled(Link)`
 export const NavIcon = styled.div`
   display: flex;
   align-items: center;
+  justify-content: center;
 `

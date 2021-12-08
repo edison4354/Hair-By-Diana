@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 import SalonModel from '../assets/salon_model.png';
 import RightLeaf from '../assets/right_leaf.png';
 import LeftLeaf from '../assets/left_leaf.png';
@@ -20,9 +21,11 @@ function Home() {
       <H1>
         Award-Winning Beauty Salon in Monterey 
       </H1>
-      <BookButton>
-        Book Now
-      </BookButton>
+      <Link to="/book">
+        <BookButton>
+          Book Now
+        </BookButton>
+      </Link>
     </Container>
   );
 }

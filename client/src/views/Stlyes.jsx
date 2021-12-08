@@ -14,7 +14,7 @@ export const BackgroundImageBottomRight = styled.img`
   position: absolute; 
   bottom: 0px; 
   right: 0px;
-  height: 660px;
+  height: 550px;
 `
 export const BackgroundImageTopLeft = styled.img`
   position: absolute; 
