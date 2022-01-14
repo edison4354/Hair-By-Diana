@@ -21,7 +21,7 @@ function Reservation() {
         <AppointmentDetails/>
       </Context>
       <Footer>
-        Footer (Continue Button)
+        
       </Footer>
     </ResContainer>
   )
