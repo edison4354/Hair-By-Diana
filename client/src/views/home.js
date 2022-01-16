@@ -17,9 +17,9 @@ function Home() {
     <Container>
       <BackgroundImageTopRight src={RightLeaf} alt="Right Leaf"/>
       <BackgroundImageTopLeft src={LeftLeaf} alt="Left Leaf"/>
-      <BackgroundImageBottomRight src={SalonModel} alt="Salon Model"/>
+      {/* <BackgroundImageBottomRight src={SalonModel} alt="Salon Model"/> */}
       <H1>
-        Award-Winning Beauty Salon in Monterey 
+        Hair Stylist Based in Monterey
       </H1>
       <Link to="/book">
         <BookButton>
